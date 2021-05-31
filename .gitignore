@@ -1,3 +1,5 @@
 # Project exclude paths
 /target/
 /.idea/
+SpreeAutomationTesting.iml
+.DS_Store
