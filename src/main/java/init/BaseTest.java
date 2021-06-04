@@ -2,6 +2,7 @@ package init;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,7 +14,9 @@ public class BaseTest {
 
     public void initialSetup() {
         System.setProperty("webdriver.chrome.driver", "/Users/ashawami/Downloads/chromedriver");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         driver.get("https://spree-vapasi.herokuapp.com");
     }
 
