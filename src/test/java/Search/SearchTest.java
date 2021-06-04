@@ -6,12 +6,9 @@ import pages.Cart;
 import pages.ProductDetailPage;
 import pages.ProductListingPage;
 
-import java.io.IOException;
-import java.util.Properties;
-
 import static org.junit.Assert.assertEquals;
 
-public class  SearchTest extends BaseTest {
+public class SearchTest extends BaseTest {
     @Test
     public void testValidSearchInput() {
         ProductListingPage products = new ProductListingPage(driver);

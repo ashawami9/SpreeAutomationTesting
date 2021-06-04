@@ -4,9 +4,6 @@ import testsetup.BaseTest;
 import org.testng.annotations.*;
 import pages.Login;
 
-import java.io.IOException;
-import java.util.Properties;
-
 import static org.junit.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
