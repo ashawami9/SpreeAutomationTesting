@@ -1,8 +1,10 @@
-package init;
+package testsetup;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,8 +12,9 @@ import java.util.Properties;
 
 public class BaseTest {
     public WebDriver driver;
-    private Properties prop;
+    public Properties prop;
 
+    @BeforeMethod
     public void initialSetup() {
         System.setProperty("webdriver.chrome.driver", "/Users/ashawami/Downloads/chromedriver");
         ChromeOptions options = new ChromeOptions();
@@ -20,6 +23,7 @@ public class BaseTest {
         driver.get("https://spree-vapasi.herokuapp.com");
     }
 
+    @BeforeMethod
     public Properties readDatabase() throws IOException {
         FileReader reader = new FileReader("./src/main/java/init/db.properties");
         prop = new Properties();
@@ -27,6 +31,7 @@ public class BaseTest {
         return prop;
     }
 
+    @AfterMethod
     public void terminate() {
         driver.quit();
     }

@@ -1,6 +1,6 @@
 package Search;
 
-import init.BaseTest;
+import testsetup.BaseTest;
 import org.testng.annotations.*;
 import pages.Cart;
 import pages.ProductDetailPage;
@@ -12,19 +12,6 @@ import java.util.Properties;
 import static org.junit.Assert.assertEquals;
 
 public class  SearchTest extends BaseTest {
-    public Properties prop;
-
-    @BeforeMethod
-    public void testSetup() throws IOException {
-        initialSetup();
-        prop = readDatabase();
-    }
-
-    @AfterMethod
-    public void quitTest() {
-        terminate();
-    }
-
     @Test
     public void testValidSearchInput() {
         ProductListingPage products = new ProductListingPage(driver);

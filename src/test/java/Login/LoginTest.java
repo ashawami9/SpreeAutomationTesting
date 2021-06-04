@@ -1,6 +1,6 @@
 package Login;
 
-import init.BaseTest;
+import testsetup.BaseTest;
 import org.testng.annotations.*;
 import pages.Login;
 
@@ -10,19 +10,6 @@ import java.util.Properties;
 import static org.junit.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
-    public Properties prop;
-
-    @BeforeMethod
-    public void testSetup() throws IOException {
-        initialSetup();
-        prop = readDatabase();
-    }
-
-    @AfterMethod
-    public void quitTest() {
-        terminate();
-    }
-
     @Test
     public void testLoginAndLogout() {
         Login login = new Login(driver);
